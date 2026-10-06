@@ -28,6 +28,12 @@
     leading: 0.72em,
   )
 
+  set math.equation(
+    numbering: "(1)",
+    number-align: end,
+    supplement: [Ecuación],
+  )
+
   set page(
     paper: "us-letter",
 
