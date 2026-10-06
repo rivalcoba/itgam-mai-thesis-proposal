@@ -158,6 +158,7 @@
               #data.period
             ],
           ),
+
           info-card(
             "DIRECCION DE TESIS",
             data.advisor,
