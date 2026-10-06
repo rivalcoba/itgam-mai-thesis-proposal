@@ -21,6 +21,8 @@
 
   advisor: "Grado y nombre completo",
   coadvisor: "Grado y nombre completo",
+  reviewer1: "Grado y nombre completo",
+  reviewer2: "Grado y nombre completo",
 
   city: "Ciudad, entidad",
   date: "Mes de 2026",

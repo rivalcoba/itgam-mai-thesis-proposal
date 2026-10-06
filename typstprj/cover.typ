@@ -1,4 +1,4 @@
-#import "styles.typ": navy, gold
+#import "styles.typ": gold, navy
 #import "components.typ": info-card
 
 #let cover(data) = page(
@@ -66,21 +66,21 @@
             #v(8mm)
 
             #par(
-                  leading: 0.94em,
-                  justify: false,
-                  first-line-indent: 0pt,
+              leading: 0.94em,
+              justify: false,
+              first-line-indent: 0pt,
+            )[
+              #align(left)[
+                #text(
+                  size: 27pt,
+                  weight: "bold",
+                  fill: white,
+                  hyphenate: false,
                 )[
-                  #align(left)[
-                    #text(
-                      size: 27pt,
-                      weight: "bold",
-                      fill: white,
-                      hyphenate: false,
-                    )[
-                      #data.title
-                    ]
-                  ]
+                  #data.title
                 ]
+              ]
+            ]
 
             #v(5mm)
 
@@ -139,7 +139,7 @@
     )[
       #grid(
         columns: (1fr, 1fr),
-        rows: (29mm, 29mm),
+        rows: (30mm, 30mm),
         column-gutter: 5mm,
         row-gutter: 5mm,
         info-card(
@@ -158,14 +158,11 @@
             #data.period
           ],
         ),
+
         info-card(
           "DIRECCIÓN DE TESIS",
           data.advisor,
-          secondary: if data.coadvisor == "" {
-            [Responsable de la dirección]
-          } else {
-            [Codirección: #data.coadvisor]
-          },
+          secondary: [Responsable de la dirección],
         ),
         info-card(
           "ENTREGA",
@@ -174,6 +171,31 @@
             #data.city \
             #data.period
           ],
+        ),
+      )
+
+      #v(2mm)
+
+      #grid(
+        columns: (1fr, 1fr, 1fr),
+        column-gutter: 5mm,
+        info-card(
+          "CODIRECTOR",
+          data.coadvisor,
+          height: 20mm,
+          inset-y: 1.5mm,
+        ),
+        info-card(
+          "REVISOR 1",
+          data.reviewer1,
+          height: 20mm,
+          inset-y: 1.5mm,
+        ),
+        info-card(
+          "REVISOR 2",
+          data.reviewer2,
+          height: 20mm,
+          inset-y: 1.5mm,
         ),
       )
     ],

@@ -9,15 +9,15 @@
   #body
 ]
 
-#let info-card(label, primary, secondary: none) = block(
+#let info-card(label, primary, secondary: none, height: 30mm, inset-y: 4.5mm) = block(
   width: 100%,
-  height: 30mm,
+  height: height,
   fill: paper-gray,
   stroke: 0.55pt + line-gray,
   radius: 2.5mm,
   inset: (
     x: 6mm,
-    y: 4.5mm,
+    y: inset-y,
   ),
 )[
   #grid(
