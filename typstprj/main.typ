@@ -23,15 +23,7 @@
 #include "sections/06-plan-trabajo.typ"
 #include "sections/07-resultados.typ"
 #include "sections/08-recursos.typ"
-
 // Referencias bibliográficas.
-= Referencias
-
-#bibliography(
-  "referencias.bib",
-  title: none,
-  style: "ieee",
-)
-
+#include "sections/09-referencias.typ"
 // Anexos.
-#include "sections/09-anexos.typ"
+#include "sections/10-anexos.typ"
