@@ -17,7 +17,7 @@ Formule una pregunta clara, investigable y coherente con el método propuesto.
   ),
   inset: 5mm,
 )[
-  *Pregunta principal:* ¿De qué manera «método o intervención» puede generar «resultado esperado» en «contexto delimitado»?
+  *Pregunta principal:* ¿En qué medida «método o enfoque» modifica «resultado o criterio de evaluación», frente a «comparador pertinente», en «contexto delimitado»?
 ]
 
 == Justificación
