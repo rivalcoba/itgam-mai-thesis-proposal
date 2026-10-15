@@ -4,27 +4,70 @@
 
 Plantilla para elaborar propuestas de tesis de la Maestría en Inteligencia Artificial del TecNM Virtual, Campus Gustavo A. Madero.
 
-## ¿Cómo está construida la plantilla?
+## Resumen rápido
 
-Esta plantilla está organizada como un proyecto Typst separado en archivos para mantener el contenido, el estilo y la portada de forma independiente:
+- **Documento académico en Typst** para propuestas de tesis.
+- **Portada institucional** con franjas oficiales y tarjetas informativas.
+- **Contenido modular** separado por archivos para facilitar la edición.
+- **Diseño personalizable** sin mezclar contenido con estilo.
 
-- `main.typ`: archivo principal que ensambla todo el documento.
-- `data.typ`: variables con los datos del proyecto y de las personas participantes.
-- `styles.typ`: colores, tipografías, márgenes y estilos globales.
-- `components.typ`: componentes reutilizables como tarjetas o bloques informativos.
-- `cover.typ`: composición exclusiva de la portada.
-- `sections/`: carpeta con el contenido académico dividido por apartados.
-- `referencias.bib`: bibliografía en formato BibTeX.
-- `assets/`: imágenes institucionales utilizadas en la portada.
-- `fonts/`: tipografías locales, si deseas conservar la misma apariencia en cualquier equipo.
+## Estructura del proyecto
 
-La portada se construye con una estructura por bloques: una franja superior institucional, un bloque central con el título y los datos principales, una sección de tarjetas con la información académica y un cintillo institucional inferior.
+```text
+itgam-mai-thesis-proposal/
+├── main.typ
+├── data.typ
+├── styles.typ
+├── components.typ
+├── cover.typ
+├── referencias.bib
+├── assets/
+├── fonts/
+└── sections/
+```
 
-## ¿Cómo editar cada parte?
+### ¿Qué hace cada archivo?
 
-### 1) Datos generales del proyecto
+| Archivo | Función |
+| --- | --- |
+| `main.typ` | Ensambla todo el documento final. |
+| `data.typ` | Contiene los datos del proyecto y de las personas participantes. |
+| `styles.typ` | Define colores, márgenes, tipografías y estilos globales. |
+| `components.typ` | Incluye bloques reutilizables como tarjetas informativas. |
+| `cover.typ` | Construye la portada institucional. |
+| `referencias.bib` | Guarda la bibliografía en formato BibTeX. |
+| `assets/` | Contiene imágenes institucionales. |
+| `fonts/` | Contiene tipografías locales opcionales. |
+| `sections/` | Contiene el contenido académico dividido por apartados. |
 
-Edita `data.typ` para cambiar la información que aparece en toda la plantilla:
+## Cómo está construida la plantilla
+
+La plantilla está pensada como un proyecto modular. Eso significa que el contenido, la presentación visual y la estructura del documento viven en archivos separados.
+
+### Portada
+
+La portada se compone de cuatro partes principales:
+
+1. **Franja superior institucional**
+   - Se carga desde `typstprj/assets/perfiles.png`.
+   - Funciona como encabezado visual de la portada.
+
+2. **Bloque central principal**
+   - Muestra el tipo de documento, el título, el subtítulo y la información de la asignatura.
+   - Tiene un fondo azul institucional y acentos dorados.
+
+3. **Bloques informativos**
+   - Muestran datos como estudiante, programa, asesor, fecha y revisores.
+   - Se construyen con componentes reutilizables definidos en `components.typ`.
+
+4. **Franja inferior institucional**
+   - Se carga desde `typstprj/assets/cintillo.png`.
+
+## Cómo editar la plantilla
+
+### 1. Cambiar los datos generales
+
+Edita `data.typ` para actualizar:
 
 - institución y unidad académica
 - programa y línea de investigación
@@ -34,40 +77,32 @@ Edita `data.typ` para cambiar la información que aparece en toda la plantilla:
 - asesor, coasesor y revisores
 - ciudad, fecha y periodo académico
 
-Los cambios en este archivo se reflejan automáticamente en la portada y en las secciones que usan esas variables.
+Los cambios se reflejan automáticamente en la portada y en otras secciones que usen esas variables.
 
-### 2) Portada
+### 2. Modificar la portada
 
-La portada se define en `cover.typ`.
+Edita `cover.typ` si quieres cambiar la composición visual de la portada.
 
-Está compuesta por estos elementos:
+- Para cambiar textos, modifica `data.typ`.
+- Para cambiar distribución, colores o bloques, modifica `cover.typ`.
+- Para cambiar tarjetas reutilizables, modifica `components.typ`.
 
-- **Franja superior:** imagen `assets/perfiles.png`.
-- **Bloque principal:** fondo azul con el tipo de documento, título, subtítulo y datos de la asignatura.
-- **Tarjetas informativas:** muestran estudiante, programa, dirección de tesis, entrega y revisores.
-- **Franja inferior:** imagen `assets/cintillo.png`.
+### 3. Editar el contenido académico
 
-Si quieres cambiar la composición visual, modifica `cover.typ`.
-Si solo quieres actualizar textos, hazlo en `data.typ`.
+Cada apartado está separado en `sections/`.
 
-### 3) Contenido académico
+- `00-indice.typ`: índice del documento
+- `01-resumen.typ`: resumen y palabras clave
+- `02-planteamiento.typ`: contexto, problema, pregunta y justificación
+- `03-objetivos.typ`: objetivo general y específicos
+- `04-estado-arte.typ`: marco teórico, antecedentes e hipótesis
+- `05-metodologia.typ`: diseño, datos, modelos, evaluación y ética
+- `06-plan-trabajo.typ`: cronograma de actividades
+- `07-resultados.typ`: resultados y contribuciones esperadas
+- `08-recursos.typ`: recursos, viabilidad y riesgos
+- `09-anexos.typ`: instrumentos y material complementario
 
-Cada sección está separada dentro de `sections/` para que puedas editarla sin afectar el diseño general.
-
-Ejemplos:
-
-- `00-indice.typ`: índice del documento.
-- `01-resumen.typ`: resumen y palabras clave.
-- `02-planteamiento.typ`: contexto, problema, pregunta y justificación.
-- `03-objetivos.typ`: objetivo general y específicos.
-- `04-estado-arte.typ`: marco teórico, antecedentes e hipótesis.
-- `05-metodologia.typ`: metodología, datos, modelos y evaluación.
-- `06-plan-trabajo.typ`: cronograma de actividades.
-- `07-resultados.typ`: resultados esperados.
-- `08-recursos.typ`: recursos, viabilidad y riesgos.
-- `09-anexos.typ`: material complementario.
-
-### 4) Estilos globales
+### 4. Personalizar estilos
 
 Edita `styles.typ` si deseas cambiar:
 
@@ -77,11 +112,11 @@ Edita `styles.typ` si deseas cambiar:
 - encabezados y pies de página
 - estilos tipográficos
 
-### 5) Componentes reutilizables
+### 5. Ajustar componentes reutilizables
 
-El archivo `components.typ` concentra elementos que se repiten en el documento, como las tarjetas de información. Si deseas cambiar el estilo de estos bloques, este es el archivo correcto.
+Edita `components.typ` para modificar elementos repetidos como tarjetas, recuadros o bloques informativos.
 
-### 6) Bibliografía
+### 6. Bibliografía
 
 Agrega o modifica referencias en `referencias.bib` usando formato BibTeX. Después, cita las fuentes desde las secciones con la sintaxis de Typst.
 
@@ -89,34 +124,36 @@ Agrega o modifica referencias en `referencias.bib` usando formato BibTeX. Despu�
 
 La plantilla utiliza estas imágenes:
 
-- `typstprj/assets/perfiles.png`: encabezado superior de la portada.
-- `typstprj/assets/cintillo.png`: cintillo inferior de la portada.
-- `typstprj/figures/Logotipo_Maestria_oficial-01.png`: logotipo institucional disponible para otras composiciones o materiales del proyecto.
+- `typstprj/assets/perfiles.png`: encabezado superior de la portada
+- `typstprj/assets/cintillo.png`: cintillo inferior de la portada
+- `typstprj/figures/Logotipo_Maestria_oficial-01.png`: logotipo institucional adicional
 
-Si cambias los nombres o rutas, recuerda actualizar también las referencias dentro de `cover.typ`.
+Si cambias los nombres o rutas, actualiza también las referencias dentro de `cover.typ`.
 
 ## Requisitos
 
 - Tener una cuenta en Typst Web o instalar Typst en el equipo.
 - Conservar la estructura de carpetas del proyecto.
-- Disponer de los archivos institucionales mencionados arriba.
+- Disponer de las imágenes institucionales.
 - Colocar las tipografías Montserrat en la carpeta `fonts/` si no están instaladas en el sistema.
 
 ## Compilación
 
-Para generar el PDF desde una terminal, sitúate en la carpeta raíz del proyecto y ejecuta:
+### Desde terminal
 
 ```bash
 typst compile main.typ propuesta-tesis.pdf --font-path fonts
 ```
 
-Para recompilar automáticamente cuando guardes cambios:
+### Compilación automática
 
 ```bash
 typst watch main.typ propuesta-tesis.pdf --font-path fonts
 ```
 
-En Typst Web, abre `main.typ` respetando la estructura de carpetas y la vista previa se actualizará automáticamente.
+### En Typst Web
+
+Carga todos los archivos respetando la estructura de carpetas y abre `main.typ`. La vista previa se actualizará automáticamente.
 
 ## Recomendaciones
 
