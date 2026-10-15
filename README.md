@@ -1,4 +1,4 @@
-# itgam-mai-thesis-proposal
+# MAI THESIS PROPOSAL TEMPLATE
 
 ![Encabezado del proyecto](typstprj/assets/perfiles.png)
 
